@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('travello.urls')),
     path('account/', include('account.urls')),
     path('admin/', admin.site.urls),
+    path('description/', include('description.urls')),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
