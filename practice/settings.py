@@ -43,7 +43,11 @@ INSTALLED_APPS = [
     'description',
     'weather',
     'soil',
-    
+    'rest_framework',
+    'rest_framework.authtoken',
+    'django_filters',
+    'Apiexp',
+
 ]
 
 MIDDLEWARE = [
@@ -84,10 +88,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Travello',
-        'USER' : 'postgres',
-        'PASSWORD' : 'root',
-        'HOST' : 'localhost',
-            }
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+    }
 }
 
 
@@ -135,3 +139,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
